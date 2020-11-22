@@ -58,40 +58,6 @@ amqp.connect(CONN_UR, function (error0, connection) {
 
 
 
-// amqp.connect((CONN_UR, (err, conn) => {
-//   conn.createChannel((err, ch) => {
-//     var queue = 'fromProducer';
-//     ch.assertQueue(queue, { durable: false });
-//     console.log(`Waiting for message in ${queue}`);
-//     ch.consume(queue, (msg) => {
-//       console.log(`Received ${msg.content}`);
-//       try {
-//         if (fs.existsSync(filePath)) {
-//           //File exits
-//           fs.readFile(filePath, "utf-8", (err, data) => {
-//             if (err) console.log(err)
-//             fs.writeFile(filePath, ++data, (err) => {
-//               if (err) console.log(err);
-//               console.log("Successfully Written to File.");
-//             });
-//           });
-//         } else {
-//           fs.writeFile(filePath, 1, function (err, result) {
-//             if (err) console.log('error', err);
-//           });
-//         }
-//       } catch (err) {
-//         console.error(err);
-//       }
-
-
-//     }, { noAck: true });
-//   })
-// }))
-
-
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
